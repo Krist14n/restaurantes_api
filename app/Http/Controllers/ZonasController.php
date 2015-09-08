@@ -44,6 +44,8 @@ class ZonasController extends Controller {
 	public function create()
 	{
 		//
+
+		return view('crear_zonas');
 	}
 
 	/**
@@ -54,6 +56,7 @@ class ZonasController extends Controller {
 	public function store()
 	{
 		//
+		
 	}
 
 	/**
