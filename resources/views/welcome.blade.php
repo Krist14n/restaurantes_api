@@ -40,7 +40,7 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title"><a href="/home">API Guía Restaurantes MB</a></div>
+				<div class="title"><a href="/auth/login">API Guía Restaurantes MB</a></div>
 			</div>
 		</div>
 	</body>
