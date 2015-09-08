@@ -31,3 +31,5 @@ Route::resource("cocinas", "CocinasController");
 Route::resource("promociones", "PromocionesController");
 
 Route::resource("restaurantes", "RestaurantesController");
+
+
