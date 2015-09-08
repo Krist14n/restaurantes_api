@@ -15,7 +15,7 @@ class ZonasController extends Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct(Region $region)
+	public function __construct(Zona $zona)
 	{
 		$this->middleware('auth');
 		$this->zona = $zona;
