@@ -19,3 +19,15 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+//Rutas Admin
+
+Route::resource("zonas", "ZonasController");
+
+Route::resource("planes", "PlanesController");
+
+Route::resource("cocinas", "CocinasController");
+
+Route::resource("promociones", "PromocionesController");
+
+Route::resource("restaurantes", "RestaurantesController");
