@@ -57,7 +57,7 @@ class ZonasController extends Controller {
 		//
 
 		$rules = array (
-			'rnombre'  => 'required|alpha_dash|unique:zonas'
+			'rnombre'  => 'required|unique:zonas'
 		);
 
 		$validator = Validator::make($request->all(), $rules);
@@ -85,6 +85,10 @@ class ZonasController extends Controller {
 	public function show($id)
 	{
 		//
+
+		$zona = $this->zona->whereId($id)->first();
+
+		return compact('zona');
 	}
 
 	/**
