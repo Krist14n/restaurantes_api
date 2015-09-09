@@ -7,7 +7,7 @@
 	{!! Form::open(['route' => 'zonas.store']) !!}
 
 		<div class="form-group">
-			{!! Form::text('nombre', null, ['class'=> 'form-control', 'required' => 'required']) !!}
+			{!! Form::text('zona', null, ['class'=> 'form-control', 'required' => 'required']) !!}
 		</div>
 
 		<div class="form-group">
