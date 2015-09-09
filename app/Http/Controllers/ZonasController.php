@@ -103,7 +103,7 @@ class ZonasController extends Controller {
 
 		$zona = $this->zona->whereId($id)->first();
 
-		return view('editar_zonas', compact(zona));
+		return view('editar_zonas', compact('zona'));
 	}
 
 	/**
