@@ -19,10 +19,10 @@ class Restaurante extends Model {
 		return $this->hasOne('Direccion');
 	}
 
-	public function zona()
+	/*public function zona()
 	{
 		return $this->hasOne('Zona');
-	}
+	}*/
 
 	public function cocina()
 	{
