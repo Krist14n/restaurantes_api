@@ -17,7 +17,7 @@ class CocinasController extends Controller {
 	public function __construct(Cocina $cocina)
 	{
 		$this->middleware('auth');
-		$this->zona = $zona;
+		$this->cocina = $cocina;
 	}
 
 	/**
