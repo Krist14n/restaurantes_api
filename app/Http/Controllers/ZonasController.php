@@ -56,7 +56,7 @@ class ZonasController extends Controller {
 	{
 		//
 
-		$rules = array (
+		$rules = array(
 			'nombre'  => 'required|unique:zonas'
 		);
 
