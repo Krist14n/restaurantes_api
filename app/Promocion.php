@@ -14,6 +14,10 @@ class Promocion extends Model {
 
 	protected $dates = ['deleted_at'];
 
+	protected $fillable = [
+		'promocion'
+	]
+
 	public function restaurante()
 	{
 		return $this->belongsToMany('Restaurante');
