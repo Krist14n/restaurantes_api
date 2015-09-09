@@ -14,6 +14,10 @@ class Cocina extends Model {
 
 	protected $dates = ['deleted_at'];
 
+	protected $fillable = [
+		'cocina'
+	];
+
 	public function restaurante()
 	{
 		return $this->belongsToMany('Restaurante');
