@@ -57,7 +57,7 @@ class ZonasController extends Controller {
 		//
 
 		$rules = array (
-			'rnombre'  => 'required|unique:zonas'
+			'nombre'  => 'required|alpha_dash|unique:zonas'
 		);
 
 		$validator = Validator::make($request->all(), $rules);
