@@ -57,7 +57,7 @@ class ZonasController extends Controller {
 		//
 
 		$rules = array (
-			'nombre'  => 'required|alpha_dash|unique:zonas'
+			'nombre'  => 'required|unique:zonas'
 		);
 
 		$validator = Validator::make($request->all(), $rules);
@@ -69,7 +69,7 @@ class ZonasController extends Controller {
 
 		}else{
 			
-			$this->region->create($request->all());
+			$this->zona->create($request->all());
 
 			return redirect('zonas');
 		}
