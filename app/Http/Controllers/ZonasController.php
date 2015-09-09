@@ -100,6 +100,10 @@ class ZonasController extends Controller {
 	public function edit($id)
 	{
 		//
+
+		$zona = $this->zona->whereId($id)->first();
+
+		return view('editar_zonas', compact(zona));
 	}
 
 	/**
@@ -108,9 +112,16 @@ class ZonasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
 		//
+		$zona = $this->zona->whereId($id)->first();
+
+		$zona->zona = $request->get('zona');
+
+		$zona->save();
+
+		return redirect('zonas');
 	}
 
 	/**
@@ -119,9 +130,14 @@ class ZonasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($id, Zona $zona)
 	{
 		//
+		$zonas = $this->zona->whereId($id)->first();
+
+		$zonas->delete();
+		
+		return redirect('zonas');
 	}
 
 }
