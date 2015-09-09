@@ -82,9 +82,10 @@ class PlanesController extends Controller {
 	public function show($id)
 	{
 		//
+
 		$plan = $this->plan->whereId($id)->first();
 
-		return compact('plan')
+		return compact('plan');
 	}
 
 	/**
