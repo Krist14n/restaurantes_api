@@ -2,7 +2,6 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Zona;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -53,9 +52,27 @@ class ZonasController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request, Zona $zona)
 	{
 		//
+
+		$rules = array (
+			'rnombre'  => 'required|alpha_dash|unique:zonas'
+		);
+
+		$validator = Validator::make($request->all(), $rules);
+
+		if($validator->fails())
+		{
+			$messages = $validator->messages();
+			return Redirect::to('zonas/create')->withErrors($validator);
+
+		}else{
+			
+			$this->region->create($request->all());
+
+			return redirect('zonas');
+		}
 		
 	}
 
