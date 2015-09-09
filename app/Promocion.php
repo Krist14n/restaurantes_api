@@ -16,7 +16,7 @@ class Promocion extends Model {
 
 	protected $fillable = [
 		'promocion'
-	]
+	];
 
 	public function restaurante()
 	{
