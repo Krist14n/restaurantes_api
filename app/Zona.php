@@ -18,9 +18,9 @@ class Zona extends Model {
 		'zona'
 	];
 
-	public function restaurante()
+	/*public function restaurante()
 	{
 		return $this->belongsTo('Restaurante');
-	}
+	}*/
 
 }
