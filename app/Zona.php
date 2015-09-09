@@ -14,9 +14,13 @@ class Zona extends Model {
 
 	protected $dates = ['deleted_at'];
 
-	/*public function restaurante()
+	protected $fillable = [
+		'zona'
+	];
+
+	public function restaurante()
 	{
 		return $this->belongsTo('Restaurante');
-	}*/
+	}
 
 }
