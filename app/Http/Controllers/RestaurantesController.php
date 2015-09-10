@@ -2,7 +2,11 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Zona;
+use App\Plan;
+use App\Cocina;
+use App\Promocion;
+use App\Direccion;
 use Illuminate\Http\Request;
 
 class RestaurantesController extends Controller {
@@ -12,9 +16,13 @@ class RestaurantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Restaurante $restaurante)
 	{
 		//
+		$restaurantes = $restaurante->get();
+		
+
+		return view('restaurantes', compact('restaurantes'));
 	}
 
 	/**
@@ -22,9 +30,20 @@ class RestaurantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create(Zona $zona, Plan $plan, Cocina $cocina, Promocion $promocion)
 	{
 		//
+
+		$zonas = $zona->get();
+
+		$planes = $plan->get();
+
+		$cocinas = $cocina->get();
+
+		$promociones = $promocion->get();
+
+		return view('crear_restaurantes', compact('zonas', 'planes', 'cocinas', 'promociones'));
+		
 	}
 
 	/**
