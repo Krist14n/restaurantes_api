@@ -7,6 +7,7 @@ use App\Plan;
 use App\Cocina;
 use App\Promocion;
 use App\Direccion;
+use App\Restaurante;
 use Illuminate\Http\Request;
 
 class RestaurantesController extends Controller {
@@ -16,7 +17,7 @@ class RestaurantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Restaurante $restaurante)
 	{
 		//
 		$restaurantes = $restaurante->get();
