@@ -2,41 +2,21 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Zona;
-use App\Plan;
-use App\Cocina;
-use App\Promocion;
-use App\Direccion;
+
 use Illuminate\Http\Request;
 
 class RestaurantesController extends Controller {
-	/**
-	* Create a new controller instance
-	*
-	* @return void
-	*/
-	public function __construct(Zona $zona, Plan $plan, Cocina $cocina, Restaurante $restaurante, Direccion $direccion)
-	{
-		$this->middleware('auth');
-		$this->zona 		= 	$zona;
-		$this->plan 		= 	$plan;
-		$this->cocina 		= 	$cocina;
-		$this->restaurante 	= 	$restaurante;
-		$this->direccion 	= 	$direccion;
-	}
-	
+
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index(Restaurante $restaurante)
+	public function index()
 	{
 		//
-		$restaurantes = $restaurante->get();
-		
 
-		return view('restaurantes', compact('restaurantes'));
+		return ("hello");
 	}
 
 	/**
@@ -44,20 +24,9 @@ class RestaurantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create(Zona $zona, Plan $plan, Cocina $cocina, Promocion $promocion)
+	public function create()
 	{
 		//
-
-		$zonas = $zona->get();
-
-		$planes = $plan->get();
-
-		$cocinas = $cocina->get();
-
-		$promociones = $promocion->get();
-
-		return view('crear_restaurantes', compact('zonas', 'planes', 'cocinas', 'promociones'));
-
 	}
 
 	/**
