@@ -10,7 +10,21 @@ use App\Direccion;
 use Illuminate\Http\Request;
 
 class RestaurantesController extends Controller {
-
+	/**
+	* Create a new controller instance
+	*
+	* @return void
+	*/
+	public function __construct(Zona $zona, Plan $plan, Cocina $cocina, Restaurante $restaurante, Direccion $direccion)
+	{
+		$this->middleware('auth');
+		$this->zona 		= 	$zona;
+		$this->plan 		= 	$plan;
+		$this->cocina 		= 	$cocina;
+		$this->restaurante 	= 	$restaurante;
+		$this->direccion 	= 	$direccion;
+	}
+	
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -43,7 +57,7 @@ class RestaurantesController extends Controller {
 		$promociones = $promocion->get();
 
 		return view('crear_restaurantes', compact('zonas', 'planes', 'cocinas', 'promociones'));
-		
+
 	}
 
 	/**
