@@ -31,9 +31,20 @@ class RestaurantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create(Zona $zona, Plan $plan, Cocina $cocina, Promocion $promocion)
 	{
 		//
+
+		$zonas = $zona->get();
+
+		$planes = $plan->get();
+
+		$cocinas = $cocina->get();
+
+		$promociones = $promocion->get();
+
+		return view('crear_restaurantes', compact('zonas', 'planes', 'cocinas', 'promociones'));
+
 	}
 
 	/**
