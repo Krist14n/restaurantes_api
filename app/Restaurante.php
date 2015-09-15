@@ -23,6 +23,7 @@ class Restaurante extends Model {
 		'ideal_para',
 		'marco_recomienda',
 		'precio_promedio',
+		'promocion',
 		'foto'
 	];
 	use SoftDeletes;

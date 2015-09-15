@@ -33,14 +33,6 @@
 			</select>
 		</div>
 
-		<div class="form-group">
-			<label for="promocion_id">Promoción</label>
-			<select class="form-control" name="promocion_id" id="promocion">
-				  	@foreach( $promociones as $promocion)
-				  	<option value="{{ $promocion->id }}">{{ $promocion->promocion }}</option>
-				  	@endforeach
-			</select>
-		</div>
 
 		<div class="form-group">
 			<label for="nombre">Nombre</label>
@@ -112,7 +104,11 @@
 			{!! Form::text('precio', null, ['class'=> 'form-control', 'id' => 'precio']) !!}
 
 		</div>
+		<div class="form-group">
+			<label for="promocion">Promoción</label>
+			{!! Form::textarea('promocion', null, ['class'=> 'form-control', 'id' => 'promocion']) !!}
 
+		</div>
 		<div class="form-group">
 			<label for="foto">Foto</label>
 			{!! Form::file('foto', null, ['class'=> 'form-control', 'id' => 'foto']) !!}

@@ -24,7 +24,6 @@ class RestaurantesController extends Controller {
 		$this->zona 		= 	$zonas;
 		$this->plan 		=   $planes;
 		$this->cocina 		= 	$cocinas;
-		$this->promocion 	= 	$promociones;
 
 	}
 	/**
@@ -46,7 +45,7 @@ class RestaurantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create(Zona $zona, Plan $plan, Cocina $cocina, Promocion $promocion)
+	public function create(Zona $zona, Plan $plan, Cocina $cocina)
 	{
 		//
 
@@ -56,9 +55,7 @@ class RestaurantesController extends Controller {
 
 		$cocinas = $cocina->get();
 
-		$promociones = $promocion->get();
-
-		return view('crear_restaurantes', compact('zonas', 'planes', 'cocinas', 'promociones'));
+		return view('crear_restaurantes', compact('zonas', 'planes', 'cocinas'));
 
 	}
 
@@ -73,7 +70,7 @@ class RestaurantesController extends Controller {
 		$zona_id 				= 	$request->zona_id;
 		$plan_id				= 	$request->plan_id;
 		$cocina_id				=	$request->cocina_id;
-		$promocion_id		   	=	$request->promocion_id;
+		$promocion 			   	=	$request->promocion;
 		$nombre 				=	$request->nombre;
 		$descripcion 			= 	$request->descripcion;
 		$calificacion_comida 	= 	$request->calificacion_comida;
@@ -102,7 +99,7 @@ class RestaurantesController extends Controller {
 			'zona_id'				=>	$zona_id,
 			'plan_id'				=> 	$plan_id,
 			'cocina_id'				=>	$cocina_id,
-			'promocion_id'			=> 	$promocion_id,
+			'promocion'				=> 	$promocion,
 			'nombre' 				=>	$nombre,
 			'descripcion'			=> 	$descripcion,
 			'calificacion_comida'	=> 	$calificacion_comida,
@@ -151,7 +148,7 @@ class RestaurantesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id,Restaurante $restaurante, Direccion $direccion, Zona $zonas, Plan $planes, Cocina $cocinas, Promocion $promociones)
+	public function edit($id,Restaurante $restaurante, Direccion $direccion, Zona $zonas, Plan $planes, Cocina $cocinas)
 	{
 		//
 		$restaurante = $this->restaurante->whereId($id)->first();
@@ -163,10 +160,8 @@ class RestaurantesController extends Controller {
 		$planes = $this->plan->get();
 
 		$cocinas = $this->cocina->get();
-
-		$promociones = $this->promocion->get();
 		
-		return view('editar_restaurantes', compact('restaurante','zonas','planes','cocinas','promociones', 'direccion'));
+		return view('editar_restaurantes', compact('restaurante','zonas','planes','cocinas', 'direccion'));
 	}
 
 	/**
@@ -182,7 +177,7 @@ class RestaurantesController extends Controller {
 		$zona_id 				= 	$request->zona_id;
 		$plan_id				= 	$request->plan_id;
 		$cocina_id				=	$request->cocina_id;
-		$promocion_id		   	=	$request->promocion_id;
+		$promocion		   		=	$request->promocion;
 		$nombre 				=	$request->nombre;
 		$descripcion 			= 	$request->descripcion;
 		$calificacion_comida 	= 	$request->calificacion_comida;
@@ -209,7 +204,7 @@ class RestaurantesController extends Controller {
 			'zona_id'				=>	$zona_id,
 			'plan_id'				=> 	$plan_id,
 			'cocina_id'				=>	$cocina_id,
-			'promocion_id'			=> 	$promocion_id,
+			'promocion'				=> 	$promocion,
 			'nombre' 				=>	$nombre,
 			'descripcion'			=> 	$descripcion,
 			'calificacion_comida'	=> 	$calificacion_comida,

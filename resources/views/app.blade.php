@@ -53,7 +53,6 @@
 						<li><a href="{{ url('/zonas') }}">Zonas</a></li>
 						<li><a href="{{ url('/planes') }}">Planes</a></li>
 						<li><a href="{{ url('/cocinas') }}">Tipo Cocina</a></li>
-						<li><a href="{{ url('/promociones') }}">Promociones</a></li>
 						<li><a href="{{ url('/restaurantes') }}">Restaurantes</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>

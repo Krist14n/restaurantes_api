@@ -33,16 +33,13 @@
 		</div>
 
 		<div class="form-group">
-			<label for="plan">Promoción</label>
-			<select class="form-control promocion_selector" name="promocion_id" id="promocion">
-				  	@foreach( $promociones as $promocion)
-				  	<option value="{{ $promocion->id }}">{{ $promocion->promocion }}</option>
-				  	@endforeach
-			</select>
-		</div>
-		<div class="form-group">
 			<label for="nombre">Nombre</label>
 			{!! Form::text('nombre', $restaurante->nombre, ['class'=> 'form-control', 'id' => 'nombre', 'required' => 'required']) !!}
+
+		</div>
+		<div class="form-group">
+			<label for="descripcion">Descripción</label>
+			{!! Form::textarea('descripcion', $restaurante->descripcion, ['class'=> 'form-control', 'id' => 'descripcion', 'required' => 'required']) !!}
 
 		</div>
 
@@ -105,6 +102,11 @@
 			{!! Form::text('precio', $restaurante->precio_promedio, ['class'=> 'form-control', 'id' => 'precio']) !!}
 
 		</div>
+		<div class="form-group">
+			<label for="promocion">Promoción</label>
+			{!! Form::textarea('promocion', $restaurante->promocion, ['class'=> 'form-control', 'id' => 'promocion']) !!}
+
+		</div>
 
 		<div class="form-group">
 			<label for="foto">Foto<b>{{ $restaurante->foto }}</b></label>
@@ -124,7 +126,6 @@ $(document).ready(function(){
 	$("#zona").val("{{ $restaurante->zona_id}}");
 	$("#plan").val("{{ $restaurante->plan_id}}");
 	$("#cocina").val("{{ $restaurante->cocina_id}}");
-	$("#promocion").val("{{ $restaurante->promocion_id}}");
 
 })
 </script>
