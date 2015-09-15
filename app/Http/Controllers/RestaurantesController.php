@@ -16,7 +16,7 @@ class RestaurantesController extends Controller {
 	*
 	* @return void
 	*/
-	public function __construct(Restaurante $restaurante, Direccion $direccion, Zona $zona, Plan $plan, Cocina $cocina, Promocion $promocion)
+	public function __construct(Restaurante $restaurante, Direccion $direccion, Zona $zonas, Plan $planes, Cocina $cocinas, Promocion $promociones)
 	{
 		$this->middleware('auth');
 		$this->restaurante 	= 	$restaurante;
