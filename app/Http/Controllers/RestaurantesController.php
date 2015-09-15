@@ -94,7 +94,7 @@ class RestaurantesController extends Controller {
 			'calificacion_ambiente' => 	$calificacion_ambiente,
 			'calificacion_servicio' => 	$calificacion_servicio,
 			'ideal_para'			=> 	$ideal_para,
-			'recomendacion_mb'		=> 	$marco_recomienda,
+			'marco_recomienda'		=> 	$marco_recomienda,
 			'precio_promedio'		=> 	$precio,
 			'foto' 					=> 	$nombre_imagen,
 			'_token'				=>	$token
