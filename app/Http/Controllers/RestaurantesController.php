@@ -100,7 +100,7 @@ class RestaurantesController extends Controller {
 			'web'					=>	$web,
 			'promocion'				=>	$promocion,
 			'precio_promedio'		=> 	$precio,
-			'foto' 					=> 	$nombre_imagen
+			'foto' 					=> 	$nombre_imagen,
 			'_token'				=>	$token
 		));
 
