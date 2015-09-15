@@ -14,6 +14,16 @@ class Direccion extends Model {
 
 	protected $dates = ['deleted_at'];
 
+	protected $fillable = 
+		[
+			'direccion',
+			'telefono',
+			'restaurante_id',
+			'latitud',
+			'longitud',
+			'web'
+		];
+
 	public function restaurante()
 	{
 		return $this->belongsTo('Restaurante');

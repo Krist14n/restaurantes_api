@@ -52,9 +52,75 @@ class RestaurantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		//Validar estos Requests
+		$zona_id 				= 	$request->zona_id;
+		$plan_id				= 	$request->plan_id;
+		$cocina_id				=	$request->cocina_id;
+		$promocion_id		   	=	$request->promocion_id;
+		$nombre 				=	$request->nombre;
+		$descripcion 			= 	$request->descripcion;
+		$calificacion_comida 	= 	$request->calificacion_comida;
+		$calificacion_ambiente 	= 	$request->calificacion_ambiente;
+		$calificacion_servicio 	= 	$request->calificacion_servicio;
+		$ideal_para 			= 	$request->ideal_para;
+		$marco_recomienda  		=   $request->marco_recomienda;
+		$direccion 				=	$request->direccion;
+		$latitud				= 	$request->latitud;
+		$longitud				=	$request->longitud;
+		$telefono 				=   $request->telefono;
+		$web 					= 	$request->web;
+		$precio					= 	$request->precio;
+		$token 					=   $request->_token;
+
+		if ($request->file('foto')) {
+			
+			$imagen 		=	$request->file('foto');
+			$ruta_imagen 	=	public_path().'/img/';
+			$nombre_imagen  =   str_random(6).'_'.$imagen->getClientOriginalName();
+			$uploadSuccess 	=   $imagen->move($ruta_imagen, $nombre_imagen);
+		}
+
+		//Una vez validados los requests
+		$restaurante = Restaurante::create(array(
+			'zona_id'				=>	$zona_id,
+			'plan_id'				=> 	$plan_id,
+			'cocina_id'				=>	$cocina_id,
+			'promocion_id'			=> 	$promocion_id,
+			'nombre' 				=>	$nombre,
+			'descripcion'			=> 	$descripcion,
+			'calificacion_comida'	=> 	$calificacion_comida,
+			'calificacion_ambiente' => 	$calificacion_ambiente,
+			'calificacion_servicio' => 	$calificacion_servicio,
+			'ideal_para'			=> 	$ideal_para,
+			'recomendacion_mb'		=> 	$recomendacion,
+			'ciudad_id' 			=>	$ciudad_id,
+			'categoria_id'			=> 	$categoria_id,
+			'web'					=>	$web,
+			'promocion'				=>	$promocion,
+			'precio_promedio'		=> 	$precio,
+			'foto' 					=> 	$nombre_imagen
+			'_token'				=>	$token
+		));
+
+		$direccion = Direccion::create(array(
+			'direccion'		=> 	$direccion,
+			'latitud'		=>	$latitud,
+			'longitud'		=>	$longitud,
+			'telefono'		=> 	$telefono,
+			'web'			=> 	$web
+		));
+
+		$restaurante->direccion()->save($direccion);
+
+
+		if($restaurante->save())
+		{
+			return redirect('restaurantes');
+		}
+		
+
 	}
 
 	/**

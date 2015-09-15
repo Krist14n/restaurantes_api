@@ -107,6 +107,11 @@
 			{!! Form::text('web', null, ['class'=> 'form-control', 'id' => 'web']) !!}
 
 		</div>
+		<div class="form-group">
+			<label for="precio">Precio promedio por persona</label>
+			{!! Form::text('precio', null, ['class'=> 'form-control', 'id' => 'precio']) !!}
+
+		</div>
 
 		<div class="form-group">
 			<label for="foto">Foto</label>
