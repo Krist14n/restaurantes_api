@@ -204,6 +204,24 @@ class RestaurantesController extends Controller {
 			$ruta_imagen 	=	public_path().'/img/';
 			$nombre_imagen  =   str_random(6).'_'.$imagen->getClientOriginalName();
 			$uploadSuccess 	=   $imagen->move($ruta_imagen, $nombre_imagen);
+
+			$restaurante = Restaurante::where('id', '=', $id)->update(array(
+			'zona_id'				=>	$zona_id,
+			'plan_id'				=> 	$plan_id,
+			'cocina_id'				=>	$cocina_id,
+			'promocion_id'			=> 	$promocion_id,
+			'nombre' 				=>	$nombre,
+			'descripcion'			=> 	$descripcion,
+			'calificacion_comida'	=> 	$calificacion_comida,
+			'calificacion_ambiente' => 	$calificacion_ambiente,
+			'calificacion_servicio' => 	$calificacion_servicio,
+			'ideal_para'			=> 	$ideal_para,
+			'marco_recomienda'		=> 	$marco_recomienda,
+			'precio_promedio'		=> 	$precio,
+			'foto' 					=> 	$nombre_imagen,
+			'_token'				=>	$token
+		));
+
 		}
 
 		//Una vez validados los requests
@@ -220,7 +238,6 @@ class RestaurantesController extends Controller {
 			'ideal_para'			=> 	$ideal_para,
 			'marco_recomienda'		=> 	$marco_recomienda,
 			'precio_promedio'		=> 	$precio,
-			'foto' 					=> 	$nombre_imagen,
 			'_token'				=>	$token
 		));
 
