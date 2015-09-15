@@ -151,7 +151,7 @@ class RestaurantesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($id,Restaurante $restaurante, Direccion $direccion, Zona $zonas, Plan $planes, Cocina $cocinas, Promocion $promociones)
 	{
 		//
 		$restaurante = $this->restaurante->whereId($id)->first();
