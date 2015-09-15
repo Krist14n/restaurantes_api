@@ -25,7 +25,7 @@
 
 		<div class="form-group">
 			<label for="cocina">Tipo de Cocina</label>
-			<select class="form-control cocina_selector" name="plan_id" id="cocina">
+			<select class="form-control cocina_selector" name="cocina_id" id="cocina">
 				  	@foreach( $cocinas as $cocina)
 				  	<option value="{{ $cocina->id }}">{{ $cocina->cocina }}</option>
 				  	@endforeach
@@ -126,7 +126,6 @@ $(document).ready(function(){
 	$("#zona").val("{{ $restaurante->zona_id}}");
 	$("#plan").val("{{ $restaurante->plan_id}}");
 	$("#cocina").val("{{ $restaurante->cocina_id}}");
-
 })
 </script>
 @endsection
