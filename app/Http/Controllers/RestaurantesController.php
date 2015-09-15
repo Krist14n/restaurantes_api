@@ -166,7 +166,7 @@ class RestaurantesController extends Controller {
 
 		$promociones = $this->promocion->get();
 		
-		return view('edita_restaurantes', compact('restaurante','zonas','planes','cocinas','promociones', 'direccion'));
+		return view('editar_restaurantes', compact('restaurante','zonas','planes','cocinas','promociones', 'direccion'));
 	}
 
 	/**
