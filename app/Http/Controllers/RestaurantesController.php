@@ -224,7 +224,7 @@ class RestaurantesController extends Controller {
 			'zona_id'				=>	$zona_id,
 			'plan_id'				=> 	$plan_id,
 			'cocina_id'				=>	$cocina_id,
-			'promocion_id'			=> 	$promocion_id,
+			'promocion'				=> 	$promocion,
 			'nombre' 				=>	$nombre,
 			'descripcion'			=> 	$descripcion,
 			'calificacion_comida'	=> 	$calificacion_comida,
