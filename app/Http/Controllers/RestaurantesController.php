@@ -11,7 +11,22 @@ use App\Restaurante;
 use Illuminate\Http\Request;
 
 class RestaurantesController extends Controller {
+	/**
+	* Create a new controller instance
+	*
+	* @return void
+	*/
+	public function __construct(Restaurante $restaurante, Direccion $direccion, Zona $zona, Plan $plan, Cocina $cocina, Promocion $promocion)
+	{
+		$this->middleware('auth');
+		$this->restaurante 	= 	$restaurante;
+		$this->direccion 	= 	$direccion;
+		$this->zona 		= 	$zonas;
+		$this->plan 		=   $planes;
+		$this->cocina 		= 	$cocinas;
+		$this->promocion 	= 	$promociones;
 
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
