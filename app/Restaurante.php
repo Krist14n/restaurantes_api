@@ -10,7 +10,7 @@ class Restaurante extends Model {
 	protected $table = 'restaurantes';
 	public $timestamps = true;
 
-	protected fillable = [
+	protected $fillable = [
 		'id',
 		'cocina_id',
 		'plan_id',
