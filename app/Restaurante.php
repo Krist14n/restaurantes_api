@@ -31,7 +31,7 @@ class Restaurante extends Model {
 
 	public function direccion()
 	{
-		return $this->hasOne('Direccion');
+		return $this->hasOne('App\Direccion');
 	}
 
 	/*public function zona()
