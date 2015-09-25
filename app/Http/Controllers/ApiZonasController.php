@@ -18,7 +18,7 @@ class ApiZonasController extends Controller {
 	public function index(Zona $zona)
 	{
 		//
-		return Response::json($zona->get());P
+		return Response::json($zona->get());
 	}
 
 	/**
