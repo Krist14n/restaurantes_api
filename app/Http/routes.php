@@ -43,6 +43,6 @@ Route::resource("api_planes", "ApiPlanesController");
 
 Route::resource("api_cocinas", "ApiCocinasController");
 
-
+Route::resource("api_restaurante", "ApiRestauranteController");
 
 

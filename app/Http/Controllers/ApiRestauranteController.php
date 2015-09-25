@@ -9,17 +9,16 @@ use App\Restaurante;
 
 
 
-class ApiRestaurantesController extends Controller {
+class ApiRestauranteController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index(Restaurante $restaurante)
+	public function index()
 	{
 		//
-		return Response::json($restaurante->get());
 	}
 
 	/**
@@ -48,10 +47,10 @@ class ApiRestaurantesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show()
+	public function show($id, Restaurante $restaurante)
 	{
 		//
-
+		return Response::json($restaurante->whereId($id)->get());
 	}
 
 	/**
