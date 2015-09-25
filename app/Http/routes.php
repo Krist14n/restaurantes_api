@@ -33,3 +33,9 @@ Route::resource("promociones", "PromocionesController");
 Route::resource("restaurantes", "RestaurantesController");
 
 
+//Rutas API
+
+Route::resource("api_restaurantes", "ApiRestaurantesController");
+
+
+
