@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Response;
 use App\Cocina;
+use App\Restaurante;
 
 class ApiCocinasController extends Controller {
 
@@ -46,9 +47,11 @@ class ApiCocinasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id, Restaurante $restaurante, Cocina $cocina)
 	{
 		//
+
+		return Response::json($restaurante->where('cocina_id', '=', $id)->get());
 	}
 
 	/**
