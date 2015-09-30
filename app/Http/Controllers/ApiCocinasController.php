@@ -50,7 +50,6 @@ class ApiCocinasController extends Controller {
 	public function show($id, Restaurante $restaurante, Cocina $cocina)
 	{
 		//
-
 		return Response::json($restaurante->where('cocina_id', '=', $id)->get());
 	}
 

@@ -54,9 +54,12 @@ class ApiCocinasPromocionController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id, Restaurante $restaurante, Cocina $cocina)
 	{
 		//
+
+		return Response::json($restaurante->where('cocina_id', '=', $id)->where('promocion', '!=', '')->get());
+
 	}
 
 	/**
