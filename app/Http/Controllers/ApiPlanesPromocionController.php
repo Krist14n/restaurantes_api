@@ -4,6 +4,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Response;
+use App\Plan;
+use App\Restaurante;
+use DB;
 
 class ApiPlanesPromocionController extends Controller {
 
@@ -15,6 +19,13 @@ class ApiPlanesPromocionController extends Controller {
 	public function index()
 	{
 		//
+		$planes = DB::table('planes')
+					->join('restaurantes', 'planes.id', '=', 'restaurantes.plan_id')
+					->where('restaurantes.promocion', '!=', ' ')
+					->whereNull('restaurantes.deleted_at')
+					->get();
+
+		return Response::json($planes);
 	}
 
 	/**

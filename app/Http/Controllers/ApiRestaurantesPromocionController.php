@@ -4,6 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Response;
+use App\Restaurante;
+use DB;
 
 class ApiRestaurantesPromocionController extends Controller {
 
@@ -15,6 +18,12 @@ class ApiRestaurantesPromocionController extends Controller {
 	public function index()
 	{
 		//
+		$restaurantes = DB::table('restaurantes')
+					->where('restaurantes.promocion', '!=', ' ')
+					->whereNull('restaurantes.deleted_at')
+					->get();
+
+		return Response::json($restaurantes);
 	}
 
 	/**

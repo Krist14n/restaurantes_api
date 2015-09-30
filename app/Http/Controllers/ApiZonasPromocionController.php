@@ -4,6 +4,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Response;
+use App\Zona;
+use App\Restaurante;
+use DB;
 
 class ApiZonasPromocionController extends Controller {
 
@@ -15,6 +19,13 @@ class ApiZonasPromocionController extends Controller {
 	public function index()
 	{
 		//
+		$zonas = DB::table('zonas')
+					->join('restaurantes', 'zonas.id', '=', 'restaurantes.zona_id')
+					->where('restaurantes.promocion', '!=', ' ')
+					->whereNull('restaurantes.deleted_at')
+					->get();
+
+		return Response::json($zonas);
 	}
 
 	/**
