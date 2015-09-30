@@ -4,28 +4,17 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use Response;
-use App\Cocina;
-use App\Restaurante;
-use DB;
 
-class ApiCocinasController extends Controller {
+class ApiZonasPromocionController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index(Cocina $cocina, Restaurante $restaurante)
+	public function index()
 	{
 		//
-		$cocinas = DB::table('cocinas')
-					->join('restaurantes', 'cocinas.id', '=', 'restaurantes.cocina_id')
-					->where('restaurantes.promocion', '!=', '')
-					->whereNull('restaurantes.deleted_at')
-					->get();
-
-		return Response::json($cocinas);
 	}
 
 	/**
@@ -54,11 +43,9 @@ class ApiCocinasController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id, Restaurante $restaurante, Cocina $cocina)
+	public function show($id)
 	{
 		//
-
-		return Response::json($restaurante->where('cocina_id', '=', $id)->get());
 	}
 
 	/**

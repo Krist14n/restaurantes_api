@@ -46,5 +46,12 @@ Route::resource("api_restaurantes", "ApiRestaurantesController");
 Route::resource("api_zonas", "ApiZonasController");
 
 
+Route::resource("api_cocinas_promocion", "ApiCocinasPromocionController");
+
+Route::resource("api_planes_promocion", "ApiPlanesPromocionController");
+
+Route::resource("api_restaurantes_promocion", "ApiRestaurantesPromocionController");
+
+Route::resource("api_zonas_promocion", "ApiZonasPromocionController");
 
 
