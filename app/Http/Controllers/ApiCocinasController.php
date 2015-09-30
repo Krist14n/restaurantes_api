@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Response;
 use App\Cocina;
 use App\Restaurante;
-use DB;
 
 class ApiCocinasController extends Controller {
 
@@ -16,15 +15,10 @@ class ApiCocinasController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(Cocina $cocina, Restaurante $restaurante)
+	public function index(Cocina $cocina)
 	{
 		//
-		$cocinas = DB::table('cocinas')
-					->join('restaurantes', 'cocinas.id', '=', 'restaurantes.cocina_id')
-					->whereNull('restaurantes.deleted_at')
-					->get();
-
-		return Response::json($cocinas);
+		return Response::json($cocina->get());
 	}
 
 	/**
