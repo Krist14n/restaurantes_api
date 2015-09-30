@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 use Response;
 use App\Restaurante;
 use App\Direccion;
-
-
+use DB;
 
 class ApiRestauranteController extends Controller {
 
