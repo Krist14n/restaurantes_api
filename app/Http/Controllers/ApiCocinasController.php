@@ -21,7 +21,6 @@ class ApiCocinasController extends Controller {
 		//
 		$cocinas = DB::table('cocinas')
 					->join('restaurantes', 'cocinas.id', '=', 'restaurantes.cocina_id')
-					->where('restaurantes.promocion', '!=', '')
 					->whereNull('restaurantes.deleted_at')
 					->get();
 
