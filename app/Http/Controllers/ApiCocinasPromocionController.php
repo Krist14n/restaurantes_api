@@ -58,7 +58,7 @@ class ApiCocinasPromocionController extends Controller {
 	{
 		//
 
-		return Response::json($restaurante->where('cocina_id', '=', $id)->where('promocion', '!=', '')->get());
+		return Response::json($restaurante->where('cocina_id', '=', $id)->where('promocion', '!=', ' ')->get());
 
 	}
 
