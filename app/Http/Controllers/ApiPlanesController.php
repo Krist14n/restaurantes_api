@@ -48,10 +48,10 @@ class ApiPlanesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id, Zona $zona, Restaurante $restaurante)
+	public function show($id, Plan $plan, Restaurante $restaurante)
 	{
 		//
-		return Response::json($restaurante->where('zona_id', '=', $id)->get());
+		return Response::json($restaurante->where('plan_id', '=', $id)->get());
 	}
 
 	/**

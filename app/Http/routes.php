@@ -35,15 +35,16 @@ Route::resource("restaurantes", "RestaurantesController");
 
 //Rutas API
 
+Route::resource("api_cocinas", "ApiCocinasController");
+
+Route::resource("api_planes", "ApiPlanesController");
+
+Route::resource("api_restaurante", "ApiRestauranteController");
+
 Route::resource("api_restaurantes", "ApiRestaurantesController");
 
 Route::resource("api_zonas", "ApiZonasController");
 
-Route::resource("api_planes", "ApiPlanesController");
-
-Route::resource("api_cocinas", "ApiCocinasController");
-
-Route::resource("api_restaurante", "ApiRestauranteController");
 
 
 
