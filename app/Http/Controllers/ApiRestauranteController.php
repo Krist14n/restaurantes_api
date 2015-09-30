@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Response;
 use App\Restaurante;
+use App\Direccion;
 
 
 
@@ -47,10 +48,16 @@ class ApiRestauranteController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id, Restaurante $restaurante)
+	public function show($id, Restaurante $restaurante, Direccion $direccion)
 	{
 		//
-		return Response::json($restaurante->whereId($id)->get());
+		$restaurante = DB::table('restaurantes')
+					->join('direcciones', 'restaurantes.id', '=', 'direcciones.restaurante_id' )
+					->where('restaurantes.id', '=', $id)
+					->whereNull('restaurantes.deleted_at')
+					->get();
+
+		return Response::json($restaurante);
 	}
 
 	/**
