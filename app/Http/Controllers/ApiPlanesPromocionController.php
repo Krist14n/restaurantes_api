@@ -54,7 +54,7 @@ class ApiPlanesPromocionController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id, Restaurante $restaurante)
 	{
 		//
 		return Response::json($restaurante->where('plan_id', '=', $id)->where('promocion', '!=', ' ')->get());
