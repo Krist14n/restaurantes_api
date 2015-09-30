@@ -36,6 +36,8 @@ class ApiZonasPromocionController extends Controller {
 	public function create()
 	{
 		//
+		return Response::json($restaurante->where('zona_id', '=', $id)->where('promocion', '!=', ' ')->get());
+
 	}
 
 	/**

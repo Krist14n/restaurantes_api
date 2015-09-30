@@ -34,6 +34,8 @@ class ApiRestaurantesPromocionController extends Controller {
 	public function create()
 	{
 		//
+		return Response::json($restaurante->where('promocion', '!=', ' ')->get());
+
 	}
 
 	/**
