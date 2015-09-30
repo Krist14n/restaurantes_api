@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Response;
 use App\Plan;
+use App\Restaurante;
 
 
 class ApiPlanesController extends Controller {
@@ -47,9 +48,10 @@ class ApiPlanesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id, Zona $zona, Restaurante $restaurante)
 	{
 		//
+		return Response::json($restaurante->where('zona_id', '=', $id)->get());
 	}
 
 	/**
