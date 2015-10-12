@@ -52,6 +52,7 @@ class ApiRestauranteController extends Controller {
 		//
 		$restaurante = DB::table('restaurantes')
 					->join('direcciones', 'restaurantes.id', '=', 'direcciones.restaurante_id' )
+					->join('cocinas', 'restaurantes.cocina_id', '=', 'cocinas.id')
 					->where('restaurantes.id', '=', $id)
 					->whereNull('restaurantes.deleted_at')
 					->get();
