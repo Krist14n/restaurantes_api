@@ -19,7 +19,13 @@ class ApiRestaurantesController extends Controller {
 	public function index(Restaurante $restaurante)
 	{
 		//
-		return Response::json($restaurante->get());
+		$restaurante = DB::table('restaurantes')
+					->join('direcciones', 'restaurantes.id', '=', 'direcciones.restaurante_id' )
+					->whereNull('restaurantes.deleted_at')
+					->get();
+
+		return Response::json($restaurante);
+
 	}
 
 	/**
