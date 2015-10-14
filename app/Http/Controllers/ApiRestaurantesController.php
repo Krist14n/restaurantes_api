@@ -23,7 +23,7 @@ class ApiRestaurantesController extends Controller {
 		$restaurante = DB::table('restaurantes')
 					->join('direcciones', 'restaurantes.id', '=', 'direcciones.restaurante_id' )
 					->whereNull('restaurantes.deleted_at')
-					->get();
+					->get(array('restaurantes.*', 'direcciones.latitud', 'direcciones.longitud'));
 
 		return Response::json($restaurante);
 
