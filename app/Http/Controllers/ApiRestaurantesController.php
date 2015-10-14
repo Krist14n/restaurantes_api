@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Response;
 use App\Restaurante;
-
+use App\Direccion;
+use DB;
 
 
 class ApiRestaurantesController extends Controller {
@@ -16,7 +17,7 @@ class ApiRestaurantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(Restaurante $restaurante)
+	public function index(Restaurante $restaurante, Direccion $direccion)
 	{
 		//
 		$restaurante = DB::table('restaurantes')
