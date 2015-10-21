@@ -15,9 +15,8 @@ class Dato extends Model {
 	protected $dates = ['deleted_at'];
 
 	protected $fillable = [
-		'plan',
 		'nombre',
-		'email',
+		'correo',
 		'telefono',
 		'producto'
 	];
