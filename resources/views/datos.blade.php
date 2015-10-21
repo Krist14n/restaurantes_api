@@ -26,7 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<input type="text" class="text" value="Nombre" name="nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" ><a href="#" class=" icon user"></a>
 					</li>
 					<li>
-						<input type="email" class="text" value="Correo" name="correo" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" ><a href="#" class=" icon mail"></a>
+						<input type="text" class="text" value="Correo" name="correo" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" ><a href="#" class=" icon mail"></a>
 					</li>
 					<li>
 						<input type="text" class="text" value="Teléfono de Contacto" name="telefono" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" ><a href="#" class=" icon telephone"></a>
