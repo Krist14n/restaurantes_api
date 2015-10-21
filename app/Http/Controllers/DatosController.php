@@ -34,9 +34,25 @@ class DatosController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+		$nombre = $request->nombre;
+		$correo = $request->correo;
+		$telefono = $request->telefono;
+		$producto = $request->producto;
+
+		$dato = Dato::create(array(
+			'nombre' => $nombre,
+			'correo' => $correo,
+			'telefono' => $telefono,
+			'producto' => $producto
+		));
+
+		if($dato->save())
+		{
+			return redirect('datos');
+		}
 	}
 
 	/**
