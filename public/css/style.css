@@ -112,7 +112,7 @@ form li{
 	background: url(../images/icons2.png) no-repeat -91px 2px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="email"]{
 	font-family: 'Open Sans', sans-serif;
 	width:60%;
 	padding: 0.5em 2em 0.5em 1em;

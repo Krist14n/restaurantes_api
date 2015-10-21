@@ -19,7 +19,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
 	
-				 <!-----start-main---->
 				<div class="login-form">
 						<h1><img src="images/logo_midas.png" style="width: 166px;"></h1>
 						<h2><a href="#">Registrar</a></h2>
@@ -41,7 +40,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				{!! Form::close() !!}
 			</div>
-			<!--//End-login-form-->
 					<div class="ad728x90" style="text-align:center">
 				
 		   </div>
