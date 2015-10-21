@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Dato;
 use Illuminate\Http\Request;
 
 class DatosController extends Controller {
