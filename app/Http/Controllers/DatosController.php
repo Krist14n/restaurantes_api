@@ -44,7 +44,7 @@ class DatosController extends Controller {
 
 		$dato = Dato::create(array(
 			'nombre' => $nombre,
-			'correo' => $correo,
+			'email' => $correo,
 			'telefono' => $telefono,
 			'producto' => $producto
 		));

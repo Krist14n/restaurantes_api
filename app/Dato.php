@@ -16,7 +16,7 @@ class Dato extends Model {
 
 	protected $fillable = [
 		'nombre',
-		'correo',
+		'email',
 		'telefono',
 		'producto'
 	];
