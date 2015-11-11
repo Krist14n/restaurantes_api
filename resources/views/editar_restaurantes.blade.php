@@ -45,8 +45,8 @@
 
 		<div class="form-group">
 			<label for="nespresso">Nespresso</label>
-			<label>No</label> {!!Form::radio('nespresso', 'false', $restaurante->nespresso)!!}
-			<label>Si</label> {!!Form::radio('nespresso', 'true', $restaurante->nespresso)!!}
+			<label>No</label> {!!Form::radio('nespresso', 'false', [ 'id' => 'nespresso_false' ])!!}
+			<label>Si</label> {!!Form::radio('nespresso', 'true', [ 'id' => 'nespresso_true' ])!!}
 		</div>
 
 		<div class="form-group">
@@ -132,6 +132,14 @@ $(document).ready(function(){
 	$("#zona").val("{{ $restaurante->zona_id}}");
 	$("#plan").val("{{ $restaurante->plan_id}}");
 	$("#cocina").val("{{ $restaurante->cocina_id}}");
+
+	if({{$restaurante->nespresso == 1}}){
+		$("#nespresso_true").attr('checked' , true);
+		$("#nespresso_false").attr('checked' , false);
+	}else{
+		$("#nespresso_true").attr('checked' , false)
+		$("#nespresso_false").attr('checked' , true);
+	}
 })
 </script>
 @endsection
