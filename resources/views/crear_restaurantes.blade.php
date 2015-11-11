@@ -47,8 +47,8 @@
 
 		<div class="form-group">
 			<label for="nespresso">Nespresso</label>
-			{Si!!Form::radio('nespresso', 'false',true ,['id' => 'nespresso'])!!}
-			{No!!Form::radio('nespresso', 'true' ,['id' => 'nespresso'])!!}
+			<label>No{!!Form::radio('nespresso', 'false',true ,['id' => 'nespresso'])!!}</label>
+			<label>Si{!!Form::radio('nespresso', 'true' ,['id' => 'nespresso'])!!}</label>
 		</div>
 
 		<div class="form-group">
