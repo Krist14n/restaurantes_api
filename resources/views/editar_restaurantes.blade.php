@@ -136,9 +136,11 @@ $(document).ready(function(){
 	if({{$restaurante->nespresso}} == 1){
 		$("#nespresso_true").attr('checked' , true);
 		$("#nespresso_false").attr('checked' , false);
+		console.log("true");
 	}else{
 		$("#nespresso_true").attr('checked' , false)
 		$("#nespresso_false").attr('checked' , true);
+		console.log("false")
 	}
 })
 </script>
