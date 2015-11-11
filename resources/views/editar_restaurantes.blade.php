@@ -45,7 +45,7 @@
 
 		<div class="form-group">
 			<label for="nespresso">Nespresso</label>
-			{!!Form::checkbox('nespresso', $restaurante->nespresso, null, ['class'=> 'form-control', 'id' => 'nespresso', 'required' => 'required'])!!}
+			{!!Form::checkbox('nespresso', $restaurante->nespresso, ['class'=> 'form-control', 'id' => 'nespresso', 'required' => 'required'])!!}
 
 		</div>
 
