@@ -16,6 +16,7 @@ class Restaurante extends Model {
 		'plan_id',
 		'zona_id',
 		'nombre',
+		'nespresso',
 		'descripcion',
 		'calificacion_comida',
 		'calificacion_ambiente',

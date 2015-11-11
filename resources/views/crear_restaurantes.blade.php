@@ -46,6 +46,12 @@
 		</div>
 
 		<div class="form-group">
+			<label for="nespresso">Nespresso</label>
+			{{!!Form::checkbox('nespresso', null, ['class'=> 'form-control', 'id' => 'nespresso', 'required' => 'required'])!!}}
+
+		</div>
+
+		<div class="form-group">
 			<label for="calificacion_comida ">Calificación Comida (Especificar en caso de no tener calificación) </label>
 			{!! Form::text('calificacion_comida', null, ['class'=> 'form-control', 'id' => 'calificacion_comida', 'required' => 'required']) !!}
 		</div>
