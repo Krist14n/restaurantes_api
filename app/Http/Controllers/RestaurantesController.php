@@ -73,6 +73,7 @@ class RestaurantesController extends Controller {
 		$promocion 			   	=	$request->promocion;
 		$nombre 				=	$request->nombre;
 		$descripcion 			= 	$request->descripcion;
+		$nespresso  			= 	$request->nespresso;
 		$calificacion_comida 	= 	$request->calificacion_comida;
 		$calificacion_ambiente 	= 	$request->calificacion_ambiente;
 		$calificacion_servicio 	= 	$request->calificacion_servicio;
@@ -102,6 +103,7 @@ class RestaurantesController extends Controller {
 			'promocion'				=> 	$promocion,
 			'nombre' 				=>	$nombre,
 			'descripcion'			=> 	$descripcion,
+			'nespresso'				=>	$nespresso,
 			'calificacion_comida'	=> 	$calificacion_comida,
 			'calificacion_ambiente' => 	$calificacion_ambiente,
 			'calificacion_servicio' => 	$calificacion_servicio,
