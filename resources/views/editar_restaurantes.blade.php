@@ -133,7 +133,7 @@ $(document).ready(function(){
 	$("#plan").val("{{ $restaurante->plan_id}}");
 	$("#cocina").val("{{ $restaurante->cocina_id}}");
 
-	if({{$restaurante->nespresso == 1}}){
+	if({{$restaurante->nespresso}} == 1){
 		$("#nespresso_true").attr('checked' , true);
 		$("#nespresso_false").attr('checked' , false);
 	}else{
