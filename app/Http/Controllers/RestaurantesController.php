@@ -231,6 +231,7 @@ class RestaurantesController extends Controller {
 			'promocion'				=> 	$promocion,
 			'nombre' 				=>	$nombre,
 			'descripcion'			=> 	$descripcion,
+			'nespresso'				=>	$nespresso,
 			'calificacion_comida'	=> 	$calificacion_comida,
 			'calificacion_ambiente' => 	$calificacion_ambiente,
 			'calificacion_servicio' => 	$calificacion_servicio,
