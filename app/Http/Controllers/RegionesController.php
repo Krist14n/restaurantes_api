@@ -27,7 +27,7 @@ class RegionesController extends Controller {
 	public function index()
 	{
 		//
-		$zonas = $this->region->get();
+		$regiones = $this->region->get();
 
 		return view('regiones', compact("regiones"));
 	}
