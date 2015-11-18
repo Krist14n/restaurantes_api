@@ -52,7 +52,7 @@ class RegionesController extends Controller {
 	{
 		//
 		$rules = array(
-			'region'  => 'required|unique:regiones'
+			'region'  => 'required'
 		);
 
 		$validator = Validator::make($request->all(), $rules);
