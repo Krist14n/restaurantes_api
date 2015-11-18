@@ -19,7 +19,7 @@
 		@foreach($regiones as $region)
         <tr>
 	        <th scope="row">{{ $region->id }}</th>
-	    	<td>{{ $region->region }}</td>
+	    	<td>{{ $region->nombre }}</td>
 	        <td>
 	        <span style="display:inline">
 	          	<a href="/regiones/{{ $region->id }}/edit">
