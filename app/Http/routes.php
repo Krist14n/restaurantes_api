@@ -32,6 +32,12 @@ Route::resource("promociones", "PromocionesController");
 
 Route::resource("restaurantes", "RestaurantesController");
 
+Route::resource("regiones", "RegionesController");
+
+Route::resource("ciudades", "CiudadesController");
+
+Route::resource("restaurantes_internacionales", "RestaurantesInternacionalesController");
+
 
 //Rutas API
 
@@ -44,7 +50,6 @@ Route::resource("api_restaurante", "ApiRestauranteController");
 Route::resource("api_restaurantes", "ApiRestaurantesController");
 
 Route::resource("api_zonas", "ApiZonasController");
-
 
 Route::resource("api_cocinas_promocion", "ApiCocinasPromocionController");
 
