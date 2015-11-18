@@ -50,18 +50,15 @@
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
-						<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+							
+								<li><a href="{{ url('/zonas') }}">Zonas</a></li>
+								<li><a href="{{ url('/planes') }}">Planes</a></li>
+								<li><a href="{{ url('/cocinas') }}">Tipo Cocina</a></li>
+								<li><a href="{{ url('/restaurantes') }}">Restaurantes</a></li>
+						
+								<li><a href="{{ url('/regiones') }}">Regiones del Mundo</a></li>
+								<li><a href="{{ url('/ciudades') }}">Ciudades</a></li>
+								<li><a href="{{ url('/restaurantes_internacionales') }}">Restaurantes</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
