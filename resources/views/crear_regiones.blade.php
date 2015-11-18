@@ -4,7 +4,7 @@
 <div class="col-md-4">
 	<h4>Agregar Región</h4>
 
-	{!! Form::open(['route' => 'region.store']) !!}
+	{!! Form::open(['route' => 'regiones.store']) !!}
 
 		<div class="form-group">
 			{!! Form::text('region', null, ['class'=> 'form-control', 'required' => 'required']) !!}
