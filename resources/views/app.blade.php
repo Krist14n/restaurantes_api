@@ -51,21 +51,22 @@
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
 						<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Restaurantes Nacionales<span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/zonas') }}">Zonas</a></li>
-								<li><a href="{{ url('/planes') }}">Planes</a></li>
-								<li><a href="{{ url('/cocinas') }}">Tipo Cocina</a></li>
-								<li><a href="{{ url('/restaurantes') }}">Restaurantes</a></li>
-							</ul>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Restaurantes Nacionales<span class="caret"></span></a>
+	          					<ul class="dropdown-menu">
+									<li><a href="{{ url('/zonas') }}">Zonas</a></li>
+									<li><a href="{{ url('/planes') }}">Planes</a></li>
+									<li><a href="{{ url('/cocinas') }}">Tipo Cocina</a></li>
+									<li><a href="{{ url('/restaurantes') }}">Restaurantes</a></li>
+								</ul>
 						</li>
 						<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Restaurantes Internacionales<span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Restaurantes Internacionales<span class="caret"></span></a>
+							<ul class="dropdown-menu">
 								<li><a href="{{ url('/regiones') }}">Regiones del Mundo</a></li>
 								<li><a href="{{ url('/ciudades') }}">Ciudades</a></li>
 								<li><a href="{{ url('/restaurantes_internacionales') }}">Restaurantes</a></li>
 							</ul>
+
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
