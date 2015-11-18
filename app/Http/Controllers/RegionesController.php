@@ -6,7 +6,6 @@ use App\Region;
 use Illuminate\http\Request;
 use Illuminate\Support\Facades\Validator;
 use Redirect;
-use Illuminate\Http\Request;
 
 class RegionesController extends Controller {
 	/**
