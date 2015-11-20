@@ -57,7 +57,7 @@ class CiudadesController extends Controller {
 	{
 		//
 		$rules = array(
-			'nombre'  => 'required|alpha_dash|unique:regiones'
+			'nombre'  => 'required'
 		);
 
 		$validator = Validator::make($request->all(), $rules);
