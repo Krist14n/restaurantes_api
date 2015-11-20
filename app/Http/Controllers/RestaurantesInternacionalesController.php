@@ -15,11 +15,12 @@ class RestaurantesInternacionalesController extends Controller {
 	*
 	* @return void
 	*/
-	public function __construct(Restaurante_Internacional $restaurante_internacional, Direccion_Internacional $direccion)
+	public function __construct(Restaurante_Internacional $restaurante_internacional, Direccion_Internacional $direccion, Ciudad $ciudad)
 	{
 		$this->middleware('auth');
 		$this->restaurante_internacional 	= 	$restaurante_internacional;
 		$this->direccion_internacional 		= 	$direccion;
+		$this->ciudad 						=   $ciudad;
 	}
 
 	/**
@@ -131,7 +132,7 @@ class RestaurantesInternacionalesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id, Restaurante_Internacional $restaurante_internacional, Direccion_Internacional $direccion_internacional)
+	public function edit($id, Restaurante_Internacional $restaurante_internacional, Direccion_Internacional $direccion_internacional, Ciudad $ciudad)
 	{
 		//
 
@@ -139,7 +140,7 @@ class RestaurantesInternacionalesController extends Controller {
 
 		$direccion_internacional = $this->direccion_internacional->whereRestauranteInternacional_id($id)->first();
 
-		$ciudades = $this->ciudad->get();
+		$ciudad = $this->ciudad->get();
 		
 		return view('editar_restaurantes_internacionales', compact('restaurante_internacional','ciudades', 'direccion'));
 	}
