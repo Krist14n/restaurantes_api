@@ -76,6 +76,8 @@ class RestaurantesInternacionalesController extends Controller {
 		$token 					=   $request->_token;
 
 		if ($request->file('foto')) {
+			return "test";
+			die();
 			$imagen 		=	$request->file('foto');
 			$ruta_imagen 	=	public_path().'/img/';
 			$nombre_imagen  =   str_random(6).'_'.$imagen->getClientOriginalName();
