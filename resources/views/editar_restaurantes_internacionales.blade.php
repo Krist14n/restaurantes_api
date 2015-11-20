@@ -4,7 +4,7 @@
 <div class="col-md-4">
 	<h4>Editar Restaurante Internacional</h4>
 
-	{!! Form::model('restaurante_internacional', ['route' => ['restaurantes_internacionales.update', $restaurante_internacional->id], 'method' => 'PATCH']) !!}
+	{!! Form::model('restaurante_internacional', ['route' => ['restaurantes_internacionales.update', $restaurante_internacional->id], 'method' => 'PATCH', 'files' => 'true']) !!}
 
 		<div class="form-group">
 			<label for="ciudad">Ciudad</label>

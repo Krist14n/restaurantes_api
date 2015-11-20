@@ -4,7 +4,7 @@
 <div class="col-md-4">
 	<h4>Editar Restaurante</h4>
 
-	{!! Form::model('restaurante', ['route' => ['restaurantes.update', $restaurante->id], 'method' => 'PATCH']) !!}
+	{!! Form::model('restaurante', ['route' => ['restaurantes.update', $restaurante->id], 'method' => 'PATCH', 'files' => 'true']) !!}
 
 		<div class="form-group">
 			<label for="zona">Zona</label>
