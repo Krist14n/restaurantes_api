@@ -140,7 +140,7 @@ class RestaurantesInternacionalesController extends Controller {
 
 		$direccion_internacional = $this->direccion_internacional->whereRestauranteInternacional_id($id)->first();
 
-		$ciudad = $this->ciudad->get();
+		$ciudades = $this->ciudad->get();
 		
 		return view('editar_restaurantes_internacionales', compact('restaurante_internacional','ciudades', 'direccion'));
 	}
