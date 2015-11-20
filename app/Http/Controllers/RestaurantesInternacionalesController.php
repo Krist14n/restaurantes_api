@@ -98,7 +98,7 @@ class RestaurantesInternacionalesController extends Controller {
 			'_token'				=>	$token
 		));
 
-		$direccion = Direccion::create(array(
+		$direccion = Direccion_Internacional::create(array(
 			'direccion'		=> 	$direccion,
 			'latitud'		=>	$latitud,
 			'longitud'		=>	$longitud,
@@ -195,7 +195,7 @@ class RestaurantesInternacionalesController extends Controller {
 			'_token'				=>	$token
 		));
 
-		$direccion = Direccion::where('restaurante_internacional_id', '=', $id)->update(array(
+		$direccion = Direccion_Internacional::where('restaurante_internacional_id', '=', $id)->update(array(
 			'direccion'		=> 	$direccion,
 			'latitud'		=>	$latitud,
 			'longitud'		=>	$longitud,
