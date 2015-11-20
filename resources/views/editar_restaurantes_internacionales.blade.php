@@ -39,7 +39,7 @@
 
 		<div class="form-group">
 			<label for="calificacion_ambiente">Calificación Ambiente</label>
-			{!! Form::text('calificacion_ambiente', $restaurante_internacional->calificacion_ambiente, ['class'=> 'form-control', 'id' => 'calificacion_ambiente'']) !!}
+			{!! Form::text('calificacion_ambiente', $restaurante_internacional->calificacion_ambiente, ['class'=> 'form-control', 'id' => 'calificacion_ambiente']) !!}
 		</div>
 
 		<div class="form-group">
