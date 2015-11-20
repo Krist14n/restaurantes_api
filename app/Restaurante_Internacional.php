@@ -32,7 +32,7 @@ class Restaurante_Internacional extends Model {
 
 	public function direccion()
 	{
-		return $this->hasOne('App\Direccion_Internacional');
+		return $this->hasOne('App\Direccion_Internacional', 'restaurante_internacional_id');
 	}
 
 
