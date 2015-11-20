@@ -135,7 +135,7 @@ class RestaurantesInternacionalesController extends Controller {
 	{
 		//
 
-		$restaurante_internacional = $this->restaurantes_internacionales->whereId($id)->first();
+		$restaurante_internacional = $this->restaurante_internacional->whereId($id)->first();
 
 		$direccion_internacional = $this->direccion_internacional->whereRestauranteInternacional_id($id)->first();
 
