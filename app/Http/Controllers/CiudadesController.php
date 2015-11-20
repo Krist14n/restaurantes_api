@@ -2,19 +2,37 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Ciudad;
+use App\Region;
+use Illuminate\Support\Facades\Validator;
+use Redirect;
 use Illuminate\Http\Request;
 
 class CiudadesController extends Controller {
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct(Ciudad $ciudad, Region $region)
+	{
+		$this->middleware('auth');
+		$this->ciudad = $ciudad;
+		$this->region = $region;
+	}
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Ciudad $ciudad)
 	{
 		//
+
+		$ciudades = $ciudad->get();
+		return view('ciudades', compact("ciudades"));
+
 	}
 
 	/**
@@ -25,6 +43,9 @@ class CiudadesController extends Controller {
 	public function create()
 	{
 		//
+		$regiones = $this->region->get();
+		return view('crear_ciudades', compact('regiones'));
+
 	}
 
 	/**
@@ -32,9 +53,26 @@ class CiudadesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+		$rules = array(
+			'nombre'  => 'required|alpha_dash|unique:regiones'
+		);
+
+		$validator = Validator::make($request->all(), $rules);
+
+		if($validator->fails())
+		{
+			$messages = $validator->messages();
+			return Redirect::to('ciudades/create')->withErrors($validator);
+
+		}else{
+			
+			$this->ciudad->create($request->all());
+			return redirect('ciudades');
+		}
+
 	}
 
 	/**
@@ -46,6 +84,9 @@ class CiudadesController extends Controller {
 	public function show($id)
 	{
 		//
+		$ciudad = $this->ciudad->whereId($id)->first();
+
+		return compact('ciudad');
 	}
 
 	/**
@@ -57,6 +98,10 @@ class CiudadesController extends Controller {
 	public function edit($id)
 	{
 		//
+		$ciudad = $this->ciudad->whereId($id)->first();
+
+		return view('edita_ciudades', compact('ciudad'));
+
 	}
 
 	/**
@@ -65,9 +110,17 @@ class CiudadesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
 		//
+		$ciudad = $this->ciudad->whereId($id)->first();
+
+		$ciudad->nombre = $request->get('nombre');
+
+		$ciudad->save();
+
+		return redirect('ciudades');
+
 	}
 
 	/**
@@ -76,9 +129,12 @@ class CiudadesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($id, Ciudad $ciudad)
 	{
 		//
+		$ciudades = $this->ciudad->whereId($id)->first();
+		$ciudades->delete();
+		return redirect('ciudades');
 	}
 
 }
