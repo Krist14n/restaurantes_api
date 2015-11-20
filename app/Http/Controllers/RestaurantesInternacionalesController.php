@@ -107,7 +107,6 @@ class RestaurantesInternacionalesController extends Controller {
 
 		$restaurante_internacional->direccion()->save($direccion);
 
-
 		if($restaurante_internacional->save())
 		{
 			return redirect('restaurantes_internacionales');
@@ -138,7 +137,7 @@ class RestaurantesInternacionalesController extends Controller {
 
 		$restaurante_internacional = $this->restaurantes_internacionales->whereId($id)->first();
 
-		$direccion = $this->direccion->whereRestaurante_id($id)->first();
+		$direccion = $this->direccion_internacional->whereRestauranteInternacional_id($id)->first();
 
 		$ciudades = $this->ciudad->get();
 		
