@@ -17,7 +17,7 @@ class Restaurante_Internacional extends Model {
 			'ciudad_id',
 			'nombre',
 			'tipo_comida',
-			'foto'
+			'foto',
 			'descripcion',
 			'calificacion_comida',
 			'calificacion_ambiente',
