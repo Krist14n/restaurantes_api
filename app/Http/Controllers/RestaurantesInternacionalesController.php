@@ -32,7 +32,7 @@ class RestaurantesInternacionalesController extends Controller {
 		//
 		$restaurantes_internacionales = $restaurante_internacional->get();
 
-		return view("restaurantes_internacionales", compact("$restaurantes_internacionales"))
+		return view("restaurantes_internacionales", compact("$restaurantes_internacionales"));
 	}
 
 	/**
