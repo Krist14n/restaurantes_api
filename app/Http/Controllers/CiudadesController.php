@@ -100,7 +100,7 @@ class CiudadesController extends Controller {
 		//
 		$ciudad = $this->ciudad->whereId($id)->first();
 
-		return view('edita_ciudades', compact('ciudad'));
+		return view('editar_ciudades', compact('ciudad'));
 
 	}
 
