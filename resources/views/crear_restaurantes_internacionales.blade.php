@@ -32,7 +32,20 @@
 
 		</div>
 
-		
+		<div class="form-group">
+			<label for="calificacion_comida ">Calificación Comida (Especificar en caso de no tener calificación) </label>
+			{!! Form::text('calificacion_comida', null, ['class'=> 'form-control', 'id' => 'calificacion_comida']) !!}
+		</div>
+
+		<div class="form-group">
+			<label for="calificacion_ambiente">Calificación Ambiente</label>
+			{!! Form::text('calificacion_ambiente', null, ['class'=> 'form-control', 'id' => 'calificacion_ambiente']) !!}
+		</div>
+
+		<div class="form-group">
+			<label for="calificacion_servicio">Calificación Servicio</label>
+			{!! Form::text('calificacion_servicio', null, ['class'=> 'form-control', 'id' => 'calificacion_servicio']) !!}
+		</div>
 
 		<div class="form-group">
 			<label for="ideal_para">Ideal Para (separados por punto y coma ";")</label>
