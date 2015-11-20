@@ -59,22 +59,22 @@
 		</div>
 		<div class="form-group">
 			<label for="direccion">Dirección</label>
-			{!! Form::textarea('direccion', $direccion->direccion, ['class'=> 'form-control', 'id' => 'direccion', 'required' => 'required']) !!}
+			{!! Form::textarea('direccion', $direccion_internacional->direccion, ['class'=> 'form-control', 'id' => 'direccion', 'required' => 'required']) !!}
 
 		</div>
 		<div class="form-group">
 			<label for="latitud">Latitud</label>
-			{!! Form::text('latitud', $direccion->latitud, ['class'=> 'form-control', 'id' => 'latitud', 'required' => 'required']) !!}
+			{!! Form::text('latitud', $direccion_internacional->latitud, ['class'=> 'form-control', 'id' => 'latitud', 'required' => 'required']) !!}
 
 		</div>
 		<div class="form-group">
 			<label for="longitud">Longitud</label>
-			{!! Form::text('longitud', $direccion->longitud, ['class'=> 'form-control', 'id' => 'longitud', 'required' => 'required']) !!}
+			{!! Form::text('longitud', $direccion_internacional->longitud, ['class'=> 'form-control', 'id' => 'longitud', 'required' => 'required']) !!}
 
 		</div>
 		<div class="form-group">
 			<label for="telefono">Teléfono(s) *separados por coma</label>
-			{!! Form::textarea('telefono', $direccion->telefono, ['class'=> 'form-control', 'id' => 'telefono']) !!}
+			{!! Form::textarea('telefono', $direccion_internacional->telefono, ['class'=> 'form-control', 'id' => 'telefono']) !!}
 
 		</div>
 		<div class="form-group">

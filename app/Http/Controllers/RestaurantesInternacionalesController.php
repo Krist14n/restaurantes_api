@@ -142,7 +142,7 @@ class RestaurantesInternacionalesController extends Controller {
 
 		$ciudades = $this->ciudad->get();
 		
-		return view('editar_restaurantes_internacionales', compact('restaurante_internacional','ciudades', 'direccion'));
+		return view('editar_restaurantes_internacionales', compact('restaurante_internacional','ciudades', 'direccion_internacional'));
 	}
 
 	/**
