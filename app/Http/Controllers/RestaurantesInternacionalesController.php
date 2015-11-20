@@ -93,7 +93,7 @@ class RestaurantesInternacionalesController extends Controller {
 			'calificacion_servicio' => 	$calificacion_servicio,
 			'ideal_para'			=>	$ideal_para,
 			'recomendacion_mb'		=>	$recomendacion_mb,
-			'web'					=>	$web
+			'web'					=>	$web,
 			'foto'					=> 	$nombre_imagen,
 			'_token'				=>	$token
 		));
@@ -190,7 +190,7 @@ class RestaurantesInternacionalesController extends Controller {
 			'calificacion_servicio' => 	$calificacion_servicio,
 			'ideal_para'			=>	$ideal_para,
 			'recomendacion_mb'		=>	$recomendacion_mb,
-			'web'					=>	$web
+			'web'					=>	$web,
 			'foto'					=> 	$nombre_imagen,
 			'_token'				=>	$token
 		));
