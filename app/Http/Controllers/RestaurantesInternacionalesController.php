@@ -131,13 +131,13 @@ class RestaurantesInternacionalesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($id, Restaurante_Internacional $restaurante_internacional, Direccion_Internacional $direccion_internacional)
 	{
 		//
 
 		$restaurante_internacional = $this->restaurantes_internacionales->whereId($id)->first();
 
-		$direccion = $this->direccion_internacional->whereRestauranteInternacional_id($id)->first();
+		$direccion_internacional = $this->direccion_internacional->whereRestauranteInternacional_id($id)->first();
 
 		$ciudades = $this->ciudad->get();
 		
