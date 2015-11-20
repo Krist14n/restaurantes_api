@@ -4,7 +4,7 @@
 <div class="col-md-4">
 	<h4>Agregar Restaurante</h4>
 
-	{!! Form::open(['route' => 'restaurantes_internacionales.store',, 'files' => 'true']) !!}
+	{!! Form::open(['route' => 'restaurantes_internacionales.store', 'files' => 'true']) !!}
 
 		<div class="form-group">
 			<label for="ciudad">Ciudad</label>
