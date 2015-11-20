@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Region;
 use App\Ciudad;
-use App\Direccion;
+use App\Direccion_Internacional;
 use App\Restaurante_Internacional;
 use Illuminate\Http\Request;
 
@@ -15,11 +15,11 @@ class RestaurantesInternacionalesController extends Controller {
 	*
 	* @return void
 	*/
-	public function __construct(Restaurante_Internacional $restaurante_internacional, Direccion $direccion)
+	public function __construct(Restaurante_Internacional $restaurante_internacional, Direccion_Internacional $direccion)
 	{
 		$this->middleware('auth');
 		$this->restaurante_internacional 	= 	$restaurante_internacional;
-		$this->direccion 	= 	$direccion;
+		$this->direccion_internacional 		= 	$direccion;
 	}
 
 	/**
@@ -195,7 +195,7 @@ class RestaurantesInternacionalesController extends Controller {
 			'_token'				=>	$token
 		));
 
-		$direccion = Direccion::where('restaurante_id', '=', $id)->update(array(
+		$direccion = Direccion::where('restaurante_internacional_id', '=', $id)->update(array(
 			'direccion'		=> 	$direccion,
 			'latitud'		=>	$latitud,
 			'longitud'		=>	$longitud,
