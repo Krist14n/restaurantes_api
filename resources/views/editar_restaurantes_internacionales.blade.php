@@ -88,7 +88,7 @@
 
 		</div>
 		<div class="form-group">
-			{!! Form::submit('Agregar', ['class' => 'btn btn-primary  ']) !!}
+			{!! Form::submit('Editar', ['class' => 'btn btn-primary  ']) !!}
 
 		</div>
 	
