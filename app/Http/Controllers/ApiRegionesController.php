@@ -51,7 +51,7 @@ class ApiRegionesController extends Controller {
 	public function show($id, Region $region, Ciudad $ciudad)
 	{
 		//
-		return Response::json($ciudad->where("region_id","=", $id));
+		return Response::json($ciudad->where("region_id","=", $id)->get());
 	}
 
 	/**
