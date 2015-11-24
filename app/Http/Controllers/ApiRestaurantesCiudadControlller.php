@@ -4,6 +4,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Response;
+use App\Region;
+use App\Ciudad;
+use App\Restaurante_Internacional;
+
 
 class ApiRestaurantesCiudadControlller extends Controller {
 
@@ -43,9 +48,11 @@ class ApiRestaurantesCiudadControlller extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id, Ciudad $ciudad, Restaurante_Internacional $restaurante_internacional)
 	{
 		//
+		return Response::json($restaurante_internacional->where('ciudad_id','=', $id)->get());
+
 	}
 
 	/**
