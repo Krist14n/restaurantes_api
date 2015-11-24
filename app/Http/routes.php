@@ -59,6 +59,14 @@ Route::resource("api_restaurantes_promocion", "ApiRestaurantesPromocionControlle
 
 Route::resource("api_zonas_promocion", "ApiZonasPromocionController");
 
+Route::resource("api_regiones", "ApiRegionesController");
+
+Route::resource("api_ciudades", "ApiCiudadesController");
+
+Route::resource("api_restaurantes_ciudad", "ApiRestaurantesCiudadControlller");
+
+Route::resource("api_restaurante_ciudad", "ApiRestauranteCiudadController");
+
 
 //Ruta Midas
 
