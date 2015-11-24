@@ -4,6 +4,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Response;
+use App\Ciudad;
+use App\Restaurante_Internacional;
+use App\Direccion_Internacional;
+use DB;
+
 
 class ApiRestauranteCiudadController extends Controller {
 
@@ -43,9 +49,16 @@ class ApiRestauranteCiudadController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id, Restaurante_Internacional $restaurante_internacional, Direccion_Internacional $direccion_internacional)
 	{
 		//
+		$restaurant = DB::table('restaurantes_internacionales')
+					->join('direcciones_internacionales', 'restaurantes_internacionales.id', '=', 'direcciones.restaurante_internacional_id')
+					->where('restaurantes_internacionales.id', '=', $id)
+					->whereNull('restaurantes_internacionales.deleted_at')
+					->get();
+
+		return Response::json($restaurant);
 	}
 
 	/**
