@@ -53,7 +53,7 @@ class ApiRestauranteCiudadController extends Controller {
 	{
 		//
 		$restaurant = DB::table('restaurantes_internacionales')
-					->join('direcciones_internacionales', 'restaurantes_internacionales.id', '=', 'direcciones.restaurante_internacional_id')
+					->join('direcciones_internacionales', 'restaurantes_internacionales.id', '=', 'direcciones_internacionales.restaurante_internacional_id')
 					->where('restaurantes_internacionales.id', '=', $id)
 					->whereNull('restaurantes_internacionales.deleted_at')
 					->get();
